@@ -28,8 +28,18 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+//    self.navigationItem.rightBarButtonItem = addButton;
+    
+    _objects = [[NSMutableArray alloc] init];
+    
+    [_objects addObject:@"群馬"];
+    [_objects addObject:@"東京"];
+    [_objects addObject:@"茨城"];
+    [_objects addObject:@"千葉"];
+    [_objects addObject:@"埼玉"];
+    [_objects addObject:@"山梨"];
+    [_objects addObject:@"神奈川"];
 }
 
 - (void)viewDidUnload
@@ -112,6 +122,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDate *object = [_objects objectAtIndex:indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
+
     }
 }
 
