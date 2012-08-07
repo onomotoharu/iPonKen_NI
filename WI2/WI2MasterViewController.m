@@ -40,6 +40,8 @@
     [_objects addObject:@"埼玉"];
     [_objects addObject:@"山梨"];
     [_objects addObject:@"神奈川"];
+    [_objects addObject:@"沖縄"];
+
 }
 
 - (void)viewDidUnload
